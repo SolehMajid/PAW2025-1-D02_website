@@ -33,7 +33,7 @@ function loginService(string $username, string $password, &$errors)
     if ($user["role"] == "admin") {
         header("location: " . BASE_URL . "admin/index.php");
     } else {
-        header("location: " . BASE_URL . "index.php");
+        header("location: " . BASE_URL . "calon_siswa/index.php");
     }
 }
 

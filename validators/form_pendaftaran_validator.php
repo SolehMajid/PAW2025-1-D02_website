@@ -1,4 +1,6 @@
 <?php
+require_once 'base_validator.php';
+
 function namaLengkap(string $field, array &$errors)
 {
     // 
