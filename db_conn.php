@@ -1,18 +1,15 @@
 <?php
-// variabel konfigurasi db
-$hostname = "localhost";
-$dbname = "ppdb";
-$username = "root";
-$password = "";
+require_once "config.php";
 
 // menetapkan DSN (Database Source Name)
-$dsn = "mysql:host=$hostname;dbname=$dbname";
+$dsn = "mysql:host=" . HOSTNAME . ";dbname=" . DBNAME;
 
 try {
     // membuat koneksi database
-    define("DBH", new PDO($dsn, $username, $password));
+    define("DBH", new PDO($dsn, USERNAME, PASSWORD));
 } catch (PDOException $err) {
     echo "Terdapat masalah saat menghubungkan ke database<br>";
     echo "Error: " . $err->getMessage();
+
     die();
 }
