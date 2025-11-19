@@ -26,7 +26,7 @@ if (isset($_POST["login-submit"])) {
 	<title>Document</title>
 
 	<link rel="stylesheet" href="assets/css/main.css">
-	<link rel="stylesheet" href="assets/css/login.css">
+	<link rel="stylesheet" href="assets/css/login_register.css">
 </head>
 
 <body>

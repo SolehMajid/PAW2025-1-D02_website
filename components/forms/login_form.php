@@ -33,7 +33,7 @@
         Login
     </button>
 
-    <p>
+    <p class="description">
         Belum memiliki akun? <a href="register.php">Register</a>
     </p>
 </form>
