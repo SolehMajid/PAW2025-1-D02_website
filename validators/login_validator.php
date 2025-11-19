@@ -1,10 +1,17 @@
 <?php
-function username(string $field, array &$errors)
+require_once "base_validator.php";
+require_once "./services/autentikasi_service.php";
+
+function validateUsername(string $field, array &$errors): void
 {
-    // 
+    if (cekFieldKosong($field)) {
+        $errors["username"][] = "Field username tidak boleh kosong";
+    }
 }
 
-function password(string $field, array &$errors)
+function validatePassword(string $field, array &$errors): void
 {
-    // 
+    if (cekFieldKosong($field)) {
+        $errors["password"][] = "Field password tidak boleh kosong";
+    }
 }

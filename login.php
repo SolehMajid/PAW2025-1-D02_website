@@ -1,22 +1,42 @@
-<?php  ?>
-<h1 class="title">
-	Login
-</h1>
+<?php
+require_once "services/autentikasi_service.php";
+require_once "validators/login_validator.php";
 
-<form action="login.php" method="post">
-	<div class="input-container">
-		<label for="username">Username</label>
-		<input type="text" name="username" id="username">
+if (isset($_POST["login-submit"])) {
+	$username = $_POST["username"];
+	$password = $_POST["password"];
+
+	$errors = [];
+
+	validateUsername($username, $errors);
+	validatePassword($password, $errors);
+
+	if (!$errors) {
+		loginService($username, $password, $errors);
+	}
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="assets/css/login.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="judul">
+			Login
+		</h1>
+
+		<?php include "components/forms/login_form.php" ?>
 	</div>
+</body>
 
-	<div class="input-container">
-		<label for="password">Password</label>
-		<input type="password" name="password" id="password">
-	</div>
-
-	<button type="submit">Login</button>
-
-	<p>
-		Belum memiliki akun? <a href="register.php">Register</a>
-	</p>
-</form>
+</html>
