@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
 	<div class="input-container">
 		<label for="username">Username</label>
 		<input type="text" name="username" id="username" value="<?php if (isset($_POST['submit'])) {
-																	echo $password;
+																	echo $username;
 																} ?>">
 
 		<ul>
@@ -88,24 +88,6 @@ if (isset($_POST['submit'])) {
 	</div>
 
 	<button type=" submit" name="submit">Register</button>
-
-		<div class="input-container">
-			<label for="password">Password</label>
-			<input type="password" name="password" id="password">
-		</div>
-
-		<div class="input-container">
-			<label for="konfirmasi-password">Konfirmasi Password</label>
-			<input type="password" name="konfirmasi-password" id="konfirmasi-password">
-		</div>
-
-		<button type="submit" name="register-submit" value="register-submit">
-			Register
-		</button>
-
-		<p>
-			Sudah memiliki akun? <a href="login.php">Login</a>
-		</p>
 </form>
 </body>
 

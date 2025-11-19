@@ -23,6 +23,7 @@ function connUser(string $username, string $email, string $password)
 			]);
 		} else {
 			$akunSudahAda = 'Akun Sudah Ada';
+			echo $akunSudahAda;
 		}
 	} catch (pdoexception $e) {
 		echo 'Error : ' . $e->getmessage();
