@@ -24,11 +24,25 @@ p.deskripsi {
     color: var(--teks-deskripsi);
 }
 
+.error-message {
+    color: red;
+    font-size: x-small;
+    margin-left: 1rem;
+}
+
 /*  */
 
 /* komponen */
-.tombol {
-    /*  */
+.input-container {
+    display: grid;
+    gap: 0.3rem;
+}
+
+input {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
 }
 
 /*  */
