@@ -50,7 +50,7 @@ function registerService(string $username, string $email, string $password, arra
 
         if (!$user) {
             $hashPassword = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users(username,email,password,role) VALUES(:username,:email,:password,:calon_siswa)";
+            $sql = "INSERT INTO users(username, email, password, role) VALUES(:username, :email, :password, :calon_siswa)";
             $stmt = DBH->prepare($sql);
 
             $stmt->execute([
