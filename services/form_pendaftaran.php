@@ -34,7 +34,7 @@ function formPendaftaran(string $nama_lengkap, string $nik, string $jenis_kelami
         $stmt = DBH->prepare($sql);
         // ubah ini jadi $_SESSION['id_user']
         $stmt->execute([
-            ':id_user' => 5,
+            ':id_user' => $_SESSION['id_user'],
             ':nama_lengkap' => $nama_lengkap,
             ':nik' => $nik,
             ':jenis_kelamin' => $jenis_kelamin,
