@@ -26,6 +26,7 @@ function loginService(string $username, string $password, &$errors)
     }
 
     $_SESSION["username"] = $user["username"];
+    $_SESSION["user_id"] = $user["id_user"];
     $_SESSION["role"] = $user["role"];
 
     if ($user["role"] == "admin") {

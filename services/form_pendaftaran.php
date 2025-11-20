@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../db_conn.php';
 
-function formPendaftaran(string $nama_lengkap, string $nik,string $jenis_kelamin, string $tempat_lahir, string $tanggal_lahir, string $asal_sekolah, array $akta_kelahiran, array $kartu_keluarga, array $rapor, array $surat_keterangan_lulus, array $surat_kesehatan, array $pasfoto, string $persetujuan_tidak_membawa_hp, string $persetujuan_asrama)
+function formPendaftaran(string $nama_lengkap, string $nik, string $jenis_kelamin, string $tempat_lahir, string $tanggal_lahir, string $asal_sekolah, array $akta_kelahiran, array $kartu_keluarga, array $rapor, array $surat_keterangan_lulus, array $surat_kesehatan, array $pasfoto, string $persetujuan_tidak_membawa_hp, string $persetujuan_asrama)
 {
     try {
         $folder = __DIR__ . "/../assets/uploads/";
@@ -32,9 +32,9 @@ function formPendaftaran(string $nama_lengkap, string $nik,string $jenis_kelamin
         VALUES (:id_user,:nama_lengkap,:nik,:jenis_kelamin,:tempat_lahir,:tanggal_lahir,:asal_sekolah,:akta_kelahiran,:kartu_keluarga,:rapor,:surat_keterangan_lulus,:surat_kesehatan,:pasfoto,:persetujuan_tidak_membawa_hp,:persetujuan_asrama)";
 
         $stmt = DBH->prepare($sql);
-        //ubah ini jadi $_SESSION['id_user']
+        // ubah ini jadi $_SESSION['id_user']
         $stmt->execute([
-            ':id_user' => 5 ,
+            ':id_user' => 5,
             ':nama_lengkap' => $nama_lengkap,
             ':nik' => $nik,
             ':jenis_kelamin' => $jenis_kelamin,
