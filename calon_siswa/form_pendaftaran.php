@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../validators/form_pendaftaran_validator.php';
 require_once __DIR__ . '/../services/form_pendaftaran.php';
+
 if (isset($_POST['submit'])) {
 
     $nama_lengkap = $_POST['nama_lengkap'];
