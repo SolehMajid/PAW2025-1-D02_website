@@ -15,7 +15,7 @@ require_once __DIR__ . "/../auth_middleware/after_login_middleware.php";
 
 <body>
     <div class="container">
-        <div class="stat" id="total-student-candidate">
+        <div class="stat" id="total-user">
             <!--  -->
         </div>
 
@@ -23,7 +23,15 @@ require_once __DIR__ . "/../auth_middleware/after_login_middleware.php";
             <!--  -->
         </div>
 
-        <div class="stat" id="number-of-registrant">
+        <div class="stat" id="total-calon-siswa">
+            <!--  -->
+        </div>
+
+        <div class="stat" id="total-form-pendaftaran">
+            <!--  -->
+        </div>
+
+        <div class="stat" id="total-jurusan">
             <!--  -->
         </div>
     </div>
