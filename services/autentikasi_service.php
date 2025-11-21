@@ -5,7 +5,7 @@ require_once __DIR__ . "/../config.php";
 function loginService(string $username, string $password, &$errors)
 {
     $stmt = DBH->prepare("
-        SELECT username, password, role
+        SELECT id_user ,username, password, role
         FROM users
         WHERE username=:username
     ");
@@ -26,7 +26,7 @@ function loginService(string $username, string $password, &$errors)
     }
 
     $_SESSION["username"] = $user["username"];
-    $_SESSION["user_id"] = $user["id_user"];
+    $_SESSION["id_user"] = $user["id_user"];
     $_SESSION["role"] = $user["role"];
 
     if ($user["role"] == "admin") {
