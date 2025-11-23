@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../auth_middleware/after_login_middleware.php";
+require_once __DIR__ . "/../auth_middleware/before_login_middleware.php";
 require_once __DIR__ . '/../validators/form_pendaftaran_validator.php';
 require_once __DIR__ . '/../services/form_pendaftaran.php';
 
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
     validatePersetujuanTidakMembawaHp($persetujuan_tidak_membawa_hp, $errors);
 
     if (empty($errors)) {
-        formPendaftaran($nama_lengkap, $nik, $jenis_kelamin, $tempat_lahir, $tanggal_lahir, $asal_sekolah,$jurusan, $akta_kelahiran, $kartu_keluarga, $rapor, $surat_keterangan_lulus, $surat_kesehatan, $pasfoto, $persetujuan_tidak_membawa_hp, $persetujuan_asrama);
+        formPendaftaran($nama_lengkap, $nik, $jenis_kelamin, $tempat_lahir, $tanggal_lahir, $asal_sekolah, $jurusan, $akta_kelahiran, $kartu_keluarga, $rapor, $surat_keterangan_lulus, $surat_kesehatan, $pasfoto, $persetujuan_tidak_membawa_hp, $persetujuan_asrama);
     }
 }
 

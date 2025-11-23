@@ -1,0 +1,18 @@
+.container {
+    min-height: 80dvh;
+}
+
+#profile-section {
+    display: grid;
+    gap: 1rem;
+}
+
+#profile-section .buttons-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#profile-section hr.divider {
+    width: 100%;
+    margin: 0;
+}
