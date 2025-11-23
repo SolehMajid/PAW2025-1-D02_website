@@ -29,11 +29,7 @@
         <?php endif ?>
     </div>
 
-    <button type="submit" name="login-submit" value="login-submit">
+    <button type="submit" name="login-submit" value="login-submit" class="btn btn-primary">
         Login
     </button>
-
-    <p class="description">
-        Belum memiliki akun? <a href="register.php">Register</a>
-    </p>
 </form>

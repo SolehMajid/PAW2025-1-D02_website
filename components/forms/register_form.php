@@ -59,9 +59,7 @@
         </ul>
     </div>
 
-    <button type="submit" name="submit">Register</button>
-
-    <p class="description">
-        Sudah memiliki akun? <a href="login.php">Login</a>
-    </p>
+    <button type="submit" name="submit" class="btn btn-primary">
+        Register
+    </button>
 </form>

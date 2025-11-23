@@ -32,22 +32,38 @@ if (isset($_POST["login-submit"])) {
 
 <body>
 	<div class="container">
-		<div id="login-section">
+		<div id="form-section">
 			<h1>
-				Halo, <br> Selamat Datang!
+				Login
 			</h1>
 
 			<p>
-				Silahkan login untuk membuka akses lebih banyak ke halaman web
+				Silahkan <span class="text-accent">login</span>
+				untuk membuka akses lebih banyak ke halaman web,
+				dan agar dapat melakukan proses pendaftaran calon
+				siswa.
 			</p>
 
-			<div id="login-form">
+			<div id="form-container">
 				<?php include __DIR__ . "/components/forms/login_form.php" ?>
 			</div>
+
+			<p>
+				Belum memiliki akun? <a href="register.php">Register</a>
+			</p>
+
+			<hr class="divider">
+
+			<p>
+				Atau kembali ke
+				<a href="<?= BASE_URL ?>">
+					beranda
+				</a>
+			</p>
 		</div>
 
 		<div id="illustration-section">
-			<img src="" alt="">
+			<img src="<?= BASE_URL . "assets/images/9358486.jpg" ?>" alt="">
 		</div>
 	</div>
 </body>

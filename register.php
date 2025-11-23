@@ -36,11 +36,39 @@ if (isset($_POST["submit"])) {
 
 <body>
 	<div class="container">
-		<h1 class="title">
-			Register
-		</h1>
+		<div id="form-section">
+			<h1>
+				Register
+			</h1>
 
-		<?php include "components/forms/register_form.php" ?>
+			<p>
+				Silahkan melakukan <span class="text-accent">registrasi</span>
+				jika belum memiliki akun untuk melakukan proses login.
+			</p>
+
+			<div class="form-container">
+				<?php include "components/forms/register_form.php" ?>
+			</div>
+
+			<p>
+				Sudah memiliki akun? <a href="login.php">Login</a>
+			</p>
+
+			<hr class="divider">
+
+			<p>
+				Atau kembali ke
+				<a href="<?= BASE_URL ?>">
+					beranda
+				</a>
+			</p>
+		</div>
+
+		<div id="illustration-section">
+			<div id="illustration-section">
+				<img src="<?= BASE_URL . "assets/images/9358486.jpg" ?>" alt="">
+			</div>
+		</div>
 	</div>
 </body>
 

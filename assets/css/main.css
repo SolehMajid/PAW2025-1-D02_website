@@ -206,6 +206,7 @@ footer p {
     transition: all 200ms;
     text-align: center;
     width: fit-content;
+    cursor: pointer;
 }
 
 .btn:hover {
