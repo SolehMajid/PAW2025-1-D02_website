@@ -1,13 +1,13 @@
 <?php
 require_once __DIR__ . "/auth_middleware/after_login_middleware.php";
 require_once __DIR__ . "/services/autentikasi_service.php";
-require_once __DIR__ . "/validators/register_validator.php";
+require_once __DIR__ . "/validators/user_validator.php";
 
 if (isset($_POST["submit"])) {
 	$username = $_POST["username"];
 	$email = $_POST["email"];
 	$password = $_POST["password"];
-	$konfirmasiPassword = $_POST["konfirmasi-password"];
+	$konfirmasiPassword = $_POST["konfirmasi_password"];
 
 	$errors = [];
 
@@ -16,8 +16,8 @@ if (isset($_POST["submit"])) {
 	validatePassword($password, $errors);
 	validateKonfirmasiPassword($konfirmasiPassword, $password, $errors);
 
-	if (empty($errors)) {
-		registerService($username, $email, $password, $errors);
+	if (!$errors) {
+		registerService($_POST, $errors);
 	}
 }
 ?>

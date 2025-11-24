@@ -5,6 +5,12 @@
 - Mencari elemen tambahan untuk form pendaftaran
 - Menambahkan anti XSS ke setiap form yang sekiranya diperlukan
 - Jika sempat memberikan notifikasi/pemberitahuan ketika suatu proses bisnis berhasil dieksekusi
+- Memisah logout ke file terpisah
+
+- validasi
+    - Menambahkan panjang maksimal untuk username
+    - Menambahkan validasi kombinasi untuk password
+    
 
 - admin
     - Membuat sidebar admin

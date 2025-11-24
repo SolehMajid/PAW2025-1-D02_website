@@ -29,6 +29,12 @@
         <?php endif ?>
     </div>
 
+    <?php if (isset($errors["login"])): ?>
+        <div class="process-error">
+            <p><?= $errors["login"] ?></p>
+        </div>
+    <?php endif ?>
+
     <button type="submit" name="login-submit" value="login-submit" class="btn btn-primary">
         Login
     </button>

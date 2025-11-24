@@ -1,70 +1,71 @@
 <?php
-require_once __DIR__ . "/../db_conn.php";
 require_once __DIR__ . "/../config.php";
+require_once __DIR__ . "/../db_conn.php";
+require_once __DIR__ . "/user_service.php";
 
-function loginService(string $username, string $password, &$errors)
+// fungsi untuk menangani logika bisnis dari login
+function loginService(array $data, array &$errors)
 {
-    $stmt = DBH->prepare("
-        SELECT id_user ,username, password, role
-        FROM users
-        WHERE username=:username
-    ");
+    try {
+        // menggabung dua query menggunakan UNION ALL
+        $stmt = DBH->prepare(
+            "SELECT *, 'admin' role FROM admin
+            UNION ALL
+            SELECT *, 'calon_siswa' role FROM calon_siswa"
+        );
 
-    $stmt->execute([":username" => $username]);
-    $user = $stmt->fetch();
+        // mengecek admin terlebih dahulu
+        $stmt = DBH->prepare(
+            "SELECT * FROM admin WHERE username=:username"
+        );
 
-    if (!$user) {
-        $errors["username"][] = "Username tidak ditemukan";
-        return;
-    }
+        $stmt->execute([":username" => $data["username"]]);
+        $user = $stmt->fetch();
 
-    $userPassword = $user["password"];
+        // jika tidak ada akun yang ditemukan
+        if (!$user) {
+            $errors["login"] = "Username atau password anda salah";
+            return;
+        }
 
-    if (!password_verify($password, $userPassword)) {
-        $errors["password"][] = "Password anda salah!";
-        return;
-    }
+        // jika password yang dimasukkan salah
+        if (!password_verify($data["password"], $user["password"])) {
+            $errors["login"] = "Username atau password anda salah";
+            return;
+        }
 
-    $_SESSION["username"] = $user["username"];
-    $_SESSION["id_user"] = $user["id_user"];
-    $_SESSION["role"] = $user["role"];
+        // memasang session
+        $_SESSION["id_user"] = $user["id_user"];
+        $_SESSION["username"] = $user["username"];
+        $_SESSION["role"] = $user["role"];
 
-    if ($user["role"] == "admin") {
-        header("location: " . BASE_URL . "admin/index.php");
-    } else {
-        header("location: " . BASE_URL . "calon_siswa/index.php");
+        // setelah berhasil login, user akan diarahkan sesuai rolenya
+        if ($user["role"] == "admin") {
+            header("location: " . BASE_URL . "admin/index.php");
+        } else {
+            header("location: " . BASE_URL . "calon_siswa/index.php");
+        }
+
+        exit();
+    } catch (Exception $error) {
+        $errors["login"] = "Login gagal, terdapat masalah pada server";
     }
 }
 
-function registerService(string $username, string $email, string $password, array &$errors)
+// fungsi untuk menangani logika bisnis dari register
+function registerService(array $data, array &$errors)
 {
     try {
-        $sqlCheckUsername = "SELECT * FROM users WHERE username = :username";
-        $stmtCheckUsername = DBH->prepare($sqlCheckUsername);
+        // hash password menggunakan algoritma bcrypt
+        $hashed = password_hash($data["password"], PASSWORD_BCRYPT);
+        $data["password"] = $hashed;
 
-        $stmtCheckUsername->execute([
-            ':username' => $username
-        ]);
+        addUserService($data);
 
-        $user = $stmtCheckUsername->fetch();
-
-        if (!$user) {
-            $hashPassword = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO users(username, email, password, role) VALUES(:username, :email, :password, :calon_siswa)";
-            $stmt = DBH->prepare($sql);
-
-            $stmt->execute([
-                ':username' => $username,
-                ':email' => $email,
-                ':password' => $hashPassword,
-                ':calon_siswa' => 'calon_siswa'
-            ]);
-
-            header("location: " . BASE_URL . "login.php");
-        } else {
-            $errors["username"][] = "Username sudah ada!";
-        }
-    } catch (PDOException $e) {
-        echo 'Error : ' . $e->getmessage();
+        header("Location: " . BASE_URL . "login.php");
+        exit();
+    } catch (Exception $error) {
+        $errors["register"] = "Proses registrasi gagal, terdapat masalah pada server";
+        var_dump($error->getMessage());
     }
 }

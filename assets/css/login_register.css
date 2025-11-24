@@ -61,7 +61,7 @@
 
 /*  */
 
-/* bagian login (kiri) */
+/* bagian form (kiri) */
 #form-section {
     display: grid;
     gap: 1rem;
@@ -82,6 +82,11 @@
 
 #form-section a {
     color: var(--color-accent-text);
+}
+
+#form-section .process-error p {
+    text-align: center;
+    color: var(--color-error);
 }
 
 /*  */

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/auth_middleware/after_login_middleware.php";
 require_once __DIR__ . "/services/autentikasi_service.php";
-require_once __DIR__ . "/validators/login_validator.php";
+require_once __DIR__ . "/validators/user_validator.php";
 
 if (isset($_POST["login-submit"])) {
 	$username = $_POST["username"];
@@ -9,11 +9,11 @@ if (isset($_POST["login-submit"])) {
 
 	$errors = [];
 
-	validateUsername($username, $errors);
-	validatePassword($password, $errors);
+	validateLoginUsername($username, $errors);
+	validateLoginPassword($password, $errors);
 
 	if (!$errors) {
-		loginService($username, $password, $errors);
+		loginService($_POST, $errors);
 	}
 }
 ?>
