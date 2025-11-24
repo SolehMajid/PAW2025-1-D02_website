@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../db_conn.php";
 
+// menambah jurusan
 function addJurusanService(array $data)
 {
     $stmt = DBH->prepare(
@@ -14,6 +15,7 @@ function addJurusanService(array $data)
     ]);
 }
 
+// mendapatkan keseluruhan data jurusan
 function getJurusanService()
 {
     $stmt = DBH->prepare(
@@ -26,6 +28,7 @@ function getJurusanService()
     return $stmt->fetchAll();
 }
 
+// mendapatkan detail jurusan berdasarkan ID jurusan
 function getJurusanByIdService(int $idJurusan)
 {
     $stmt = DBH->prepare(
@@ -41,6 +44,7 @@ function getJurusanByIdService(int $idJurusan)
     return $stmt->fetch();
 }
 
+// memperbarui data jurusan berdasarkan ID jurusan
 function updateJurusanService(array $data, int $idJurusan)
 {
     $stmt = DBH->prepare(
@@ -56,6 +60,7 @@ function updateJurusanService(array $data, int $idJurusan)
     ]);
 }
 
+// menghapus data jurusan berdasarkan ID jurusan
 function deleteJurusanService(int $jurusanId)
 {
     $stmt = DBH->prepare(
@@ -66,4 +71,17 @@ function deleteJurusanService(int $jurusanId)
     $stmt->execute([
         ":id_jurusan" => $jurusanId
     ]);
+}
+
+// mendapatkan jumlah data yang terdapat di tabel jurusan
+function getJurusanCountService()
+{
+    $stmt = DBH->prepare(
+        "SELECT count(id_jurusan) jumlah_jurusan
+            FROM jurusan"
+    );
+
+    $stmt->execute();
+
+    return $stmt->fetch()["jumlah_jurusan"];
 }

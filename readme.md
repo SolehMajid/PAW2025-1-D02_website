@@ -4,6 +4,7 @@
 - Memberi komentar ke setiap utilities/fungsi/kode yang sekiranya perlu diberi fungsi
 - Mencari elemen tambahan untuk form pendaftaran
 - Menambahkan anti XSS ke setiap form yang sekiranya diperlukan
+- Jika sempat memberikan notifikasi/pemberitahuan ketika suatu proses bisnis berhasil dieksekusi
 
 - admin
     - Membuat sidebar admin
