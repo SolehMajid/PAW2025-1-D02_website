@@ -60,33 +60,41 @@ $users = getUsersService($role, $username);
             </thead>
 
             <tbody>
-                <?php foreach ($users as $user): ?>
+                <?php if (!$users): ?>
                     <tr>
-                        <td>
-                            <?= $user["username"] ?>
-                        </td>
-
-                        <td>
-                            <?= $user["email"] ?>
-                        </td>
-
-                        <td>
-                            <?= $user["role"] ?>
-                        </td>
-
-                        <td class="table-action-column">
-                            <a href="<?= BASE_URL . "admin/akun/sunting.php?id=" . urlencode($user["id_user"]) . "&role=" . urlencode($user["role"]) ?>" class="btn btn-info">
-                                Sunting
-                            </a>
-
-                            <?php if ($user["id_user"] != $_SESSION["id_user"]): ?>
-                                <a href="<?= BASE_URL . "admin/akun/hapus.php?id=" . urlencode($user["id_user"]) . "&role=" . urlencode($user["role"]) ?>" class="btn btn-error">
-                                    Hapus
-                                </a>
-                            <?php endif ?>
+                        <td class="data-empty">
+                            Data Kosong
                         </td>
                     </tr>
-                <?php endforeach ?>
+                <?php else: ?>
+                    <?php foreach ($users as $user): ?>
+                        <tr>
+                            <td>
+                                <?= $user["username"] ?>
+                            </td>
+
+                            <td>
+                                <?= $user["email"] ?>
+                            </td>
+
+                            <td>
+                                <?= $user["role"] ?>
+                            </td>
+
+                            <td class="table-action-column">
+                                <a href="<?= BASE_URL . "admin/akun/sunting.php?id=" . urlencode($user["id_user"]) . "&role=" . urlencode($user["role"]) ?>" class="btn btn-info">
+                                    Sunting
+                                </a>
+
+                                <?php if ($user["id_user"] != $_SESSION["id_user"]): ?>
+                                    <a href="<?= BASE_URL . "admin/akun/hapus.php?id=" . urlencode($user["id_user"]) . "&role=" . urlencode($user["role"]) ?>" class="btn btn-error">
+                                        Hapus
+                                    </a>
+                                <?php endif ?>
+                            </td>
+                        </tr>
+                    <?php endforeach ?>
+                <?php endif ?>
             </tbody>
         </table>
     </div>
