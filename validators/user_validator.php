@@ -113,11 +113,11 @@ function validatePassword(string $field, array &$errors)
 function validateKonfirmasiPassword(string $field, string $password, array &$errors)
 {
     if (cekFieldKosong($field)) {
-        $errors["konfirmasi_password"][] = "Konfirmasi password tidak boleh kosong";
+        $errors["konfirmasi-password"][] = "Konfirmasi password tidak boleh kosong";
     }
 
     if ($field != $password) {
-        $errors["konfirmasi_password"][] = "Password konfirmasi tidak sama dengan password utama";
+        $errors["konfirmasi-password"][] = "Password konfirmasi tidak sama dengan password utama";
     }
 }
 
