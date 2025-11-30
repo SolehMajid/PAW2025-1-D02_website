@@ -39,7 +39,7 @@ if (isset($_POST["nama-jurusan"])) {
             <form action="" method="post" class="filter">
                 <div class="input-container">
                     <label for="nama-jurusan">Nama Jurusan</label>
-                    <input type="text" name="nama-jurusan" id="nama-jurusan">
+                    <input type="text" name="nama-jurusan" id="nama-jurusan" value="<?= htmlspecialchars($_POST["nama-jurusan"] ?? '') ?>">
                 </div>
 
                 <button type="submit" class="btn btn-neutral">

@@ -38,7 +38,7 @@ if (isset($_GET["jenis-dokumen-filter"])) {
             <form action="" method="get">
                 <div class="input-container">
                     <label for="jenis-dokumen">Nama Jenis Dokumen</label>
-                    <input type="text" name="jenis-dokumen" id="jenis-dokumen">
+                    <input type="text" name="jenis-dokumen" id="jenis-dokumen" value="<?= htmlspecialchars($_GET["jenis-dokumen"] ?? '') ?>">
                 </div>
 
                 <button type="submit" class="btn btn-neutral" name="jenis-dokumen-filter">
