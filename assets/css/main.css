@@ -138,6 +138,7 @@ input,
 select,
 textarea {
     width: 100%;
+    height: fit-content;
     border: 1px solid var(--color-neutral);
     border-radius: 5px;
     padding: 0.7rem 0.5rem;
