@@ -43,7 +43,7 @@ function validateNamaJurusan(string $field, array &$errors)
     $stmt->execute([":nama_jurusan" => $field]);
 
     if ($stmt->rowCount()) {
-        $errors["nama_jurusan"][] = "Nama jurusan yang anda masukkan sudah ada";
+        $errors["nama-jurusan"][] = "Nama jurusan yang anda masukkan sudah ada";
     }
 }
 
