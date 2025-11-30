@@ -40,7 +40,7 @@ if (isset($_GET["nama-program"])) {
             <form action="" method="get">
                 <div class="input-container">
                     <label for="nama-program">Nama program</label>
-                    <input type="text" name="nama-program" id="nama-program">
+                    <input type="text" name="nama-program" id="nama-program" value="<?= htmlspecialchars($_GET["nama-program"] ?? '') ?>">
                 </div>
 
                 <button type="submit" class="btn btn-neutral">

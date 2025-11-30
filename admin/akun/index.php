@@ -31,7 +31,7 @@ $users = getUsersService($role, $username);
         <form action="" method="get" class="filter">
             <div class="input-container">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" value="<?= $username ?? "" ?>">
+                <input type="text" name="username" id="username" value="<?= htmlspecialchars($username ?? "") ?>">
             </div>
 
             <div class="input-container">
