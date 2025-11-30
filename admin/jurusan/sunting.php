@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/../../auth_middleware/before_login_middleware.php";
+require_once __DIR__ . "/../../validators/jurusan_validator.php";
 require_once __DIR__ . "/../../services/jurusan_service.php";
 
 if (!isset($_GET["id"])) {
