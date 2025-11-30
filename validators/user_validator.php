@@ -2,7 +2,15 @@
 require_once __DIR__ . "/../db_conn.php";
 require_once __DIR__ . "/base_validator.php";
 
-// validator untuk username (digunakan saat proses create/update)
+/**
+ * Fungsi untuk memvalidasi username dari pengguna.
+ * 
+ * Fungsi ini juga melihat ke dalam database untuk mengecek apakah username
+ * telah digunakan/terdaftar atau belum.
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validateUsername(string $field, array &$errors)
 {
     $regex = "/^[A-Za-z1-9_]+$/";
@@ -44,7 +52,15 @@ function validateUsername(string $field, array &$errors)
 }
 
 
-// validator untuk email (digunakan saat proses create/update)
+/**
+ * Fungsi untuk memvalidasi email dari pengguna.
+ * 
+ * Fungsi ini juga melihat ke dalam database untuk mengecek apakah
+ * email sudah terdaftar atau belum.
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validateEmail(string $field, array &$errors)
 {
     if (cekFieldKosong($field)) {
@@ -75,7 +91,20 @@ function validateEmail(string $field, array &$errors)
     }
 }
 
-// validator password (digunakan untuk proses bisnis create/update)
+/**
+ * Fungsi untuk memvalidasi password dari pengguna.
+ * 
+ * Agar diterima oleh sistem, validasi ini memiliki beberapa kriteria:
+ * - Tidak boleh kosong
+ * - Panjang minimal adalah 8 karakter
+ * - Mengandung huruf besar (setidaknya satu karakter)
+ * - Mengandung huruf kecil (setidaknya satu karakter)
+ * - Mengandung angka (setidaknya satu karakter)
+ * - Mengandung karakter spesial ['_', '\', '-', '@', ' '] (setidaknya satu karakter)
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validatePassword(string $field, array &$errors)
 {
     $reUpperLetter = "/[A-Z]+/";
@@ -109,7 +138,13 @@ function validatePassword(string $field, array &$errors)
 }
 
 
-// validator konfirmasi password (digunakan ketika registrasi akun)
+/**
+ * Fungsi untuk memvalidasi field konfirmasi password
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param string $password - Nilai dari field password
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validateKonfirmasiPassword(string $field, string $password, array &$errors)
 {
     if (cekFieldKosong($field)) {
@@ -121,6 +156,14 @@ function validateKonfirmasiPassword(string $field, string $password, array &$err
     }
 }
 
+
+/**
+ * Fungsi untuk memvalidasi role pengguna
+ * Pengguna disini hanya memiliki 2 tipe role, yaitu 'admin', dan 'calon_siswa'
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validateRole(string $field, &$errors)
 {
     $roleValue = ["admin", "calon_siswa"];
@@ -128,9 +171,18 @@ function validateRole(string $field, &$errors)
     if (cekFieldKosong($field)) {
         $errors["role"][] = "Role tidak boleh kosong";
     }
+
+    if (!in_array($field, $roleValue)) {
+        $errors["role"][] = "Role yang anda masukkan tidaklah valid!";
+    }
 }
 
-// validator username untuk login
+/**
+ * Fungsi untuk memvalidasi username (digunakan di halaman login)
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validateLoginUsername(string $field, array &$errors)
 {
     if (cekFieldKosong($field)) {
@@ -138,7 +190,12 @@ function validateLoginUsername(string $field, array &$errors)
     }
 }
 
-// validator password untuk login
+/**
+ * Fungsi untuk memvalidasi password (digunakan di halaman login)
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validateLoginPassword(string $field, array &$errors)
 {
     if (cekFieldKosong($field)) {

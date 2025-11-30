@@ -10,6 +10,7 @@ require_once __DIR__ . "/../../config.php";
                     <li><a href="<?= BASE_URL . "admin" ?>">Dashboard</a></li>
                     <li><a href="<?= BASE_URL . "admin/akun" ?>">Akun</a></li>
                     <li><a href="<?= BASE_URL . "admin/jurusan" ?>">Jurusan</a></li>
+                    <li><a href="<?= BASE_URL . "admin/program" ?>">Program</a></li>
                     <li><a href="<?= BASE_URL . "admin/jenis_dokumen" ?>">Jenis Dokumen</a></li>
                     <li><a href="<?= BASE_URL . "admin/form_pendaftaran" ?>">Form Pendaftaran</a></li>
                 <?php else: ?>

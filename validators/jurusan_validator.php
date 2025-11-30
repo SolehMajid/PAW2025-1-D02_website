@@ -3,10 +3,17 @@ require_once __DIR__ . "/../config.php";
 require_once __DIR__ . "/../db_conn.php";
 require_once __DIR__ . "/base_validator.php";
 
+/**
+ * Fungsi untuk memvalidasi nama jurusan
+ * 
+ * Validator ini juga mengecek ke dalam database apakah nama program
+ * sudah ada atau belum
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validateNamaJurusan(string $field, array &$errors)
 {
-    $regex = "/^[A-Za-z ]+$/";
-
     if (cekFieldKosong($field)) {
         $errors["nama-jurusan"][] = "Nama jurusan tidak boleh kosong";
     }
@@ -19,8 +26,8 @@ function validateNamaJurusan(string $field, array &$errors)
         $errors["nama-jurusan"][] = "Panjang maksimal dari nama jurusan adalah 50 karakter";
     }
 
-    if (!preg_match($regex, $field)) {
-        $errors["nama-jurusan"][] = "Nama jurusan hanya dapat bertipe alphabet (A-Z) / (a-z) dan spasi (' ')";
+    if (!cekAlpha($field)) {
+        $errors["nama-jurusan"][] = "Nama jurusan hanya dapat bertipe alphabet (A-Z / a-z) dan spasi (' ')";
     }
 
     // mengecek duplikasi nama jurusan
@@ -40,6 +47,12 @@ function validateNamaJurusan(string $field, array &$errors)
     }
 }
 
+/**
+ * Fungsi untuk memvalidasi deskripsi jurusan
+ * 
+ * @param string $field - Data yang akan divalidasi
+ * @param array &$errors - Array yang menyimpan pesan-pesan error tiap field
+ */
 function validateDeskripsiJurusan(string $field, array &$errors)
 {
     if (cekFieldKosong($field)) {
