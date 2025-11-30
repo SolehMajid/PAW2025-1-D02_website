@@ -1,7 +1,15 @@
 <?php
 require_once __DIR__ . '/../db_conn.php';
 
-// fungsi untuk menambahkan pengguna
+/**
+ * Fungsi untuk menambahkan user baru
+ * 
+ * Fungsi ini tidak memiliki pengecekan duplikasi username dan email,
+ * karena hal tersebut sudah dilakukan di validasi yang terpisah
+ * 
+ * @param array $data - Data yang telah tervalidasi
+ * @param string $role - Data yang telah tervalidasi
+ */
 function addUserService(array $data, string $role = "calon_siswa")
 {
     $table = $role == "admin" ? "admin" : "calon_siswa";
@@ -20,7 +28,15 @@ function addUserService(array $data, string $role = "calon_siswa")
     ]);
 }
 
-// fungsi untuk mendapatkan semua data pengguna (dilengkapi dengan filter nama & role)
+/**
+ * Fungsi untuk mendapatkan semua data pengguna
+ * 
+ * Fungsi ini dilengkapi dengan fitur filter berdasarkan username
+ * dan rolenya.
+ * 
+ * @param string $role - Role dari pengguna (Admin/Calon Siswa)
+ * @param string $username - Username dari pengguna
+ */
 function getUsersService(string $role = "", string $username = "")
 {
     $stmt = DBH->prepare(
@@ -58,7 +74,13 @@ function getUsersService(string $role = "", string $username = "")
     return $stmt->fetchAll();
 }
 
-// fungsi untuk mendapatkan detail data pengguna berdasarkan ID-nya
+/**
+ * Fungsi untuk mendapatkan data pengguna secara spesifik
+ * berdasarkan ID-nya
+ * 
+ * @param int $userId - ID dari pengguna
+ * @param string $role - Role dari pengguna (Admin/Calon Siswa)
+ */
 function getUserByID(int $userId, string $role)
 {
     $table = $role == "admin" ? "admin" : "calon_siswa";
@@ -80,7 +102,13 @@ function getUserByID(int $userId, string $role)
     return $stmt->fetch();
 }
 
-// fungsi untuk memperbarui data pengguna berdasarkan ID-nya
+/**
+ * Fungsi yang digunakan untuk memperbarui data pengguna
+ * 
+ * @param array $data - Data yang telah tervalidasi
+ * @param string $role - Role dari data yang akan disunting (Admin/Calon Siswa)
+ * @param int $userId - ID pengguna yang akan disunting
+ */
 function updateUserService(array $data, string $role, int $userId)
 {
     $table = $role == "admin" ? "admin" : "calon_siswa";
@@ -102,7 +130,13 @@ function updateUserService(array $data, string $role, int $userId)
     ]);
 }
 
-// fungsi untuk memperbarui password
+/**
+ * Fungsi untuk memperbarui password milik pengguna
+ * 
+ * @param string $password - Password baru
+ * @param int $userId - ID pengguna yang passwordnya akan diperbarui
+ * @param string $role - Role dari pengguna yang passwordnya akan diperbarui
+ */
 function updateUserPasswordService(string $password, int $userId, string $role)
 {
     $table = $role == "admin" ? "admin" : "calon_siswa";
@@ -122,7 +156,12 @@ function updateUserPasswordService(string $password, int $userId, string $role)
     ]);
 }
 
-// fungsi untuk menghapus data pengguna berdasarkan ID-nya
+/**
+ * Fungsi untuk menghapus data pengguna
+ * 
+ * @param int $userId - ID dari data pengguna yang akan dihapus
+ * @param string $role - Role dari data pengguna yang akan dihapus
+ */
 function deleteUserService(int $userId, string $role)
 {
     $table = $role == "admin" ? "admin" : "calon_siswa";
@@ -139,7 +178,9 @@ function deleteUserService(int $userId, string $role)
     ]);
 }
 
-// mendapatkan jumlah user
+/**
+ * Fungsi untuk mendapatkan jumlah data pengguna
+ */
 function getUserCountService()
 {
     $stmt = DBH->prepare(
