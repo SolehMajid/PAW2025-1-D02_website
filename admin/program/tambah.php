@@ -44,9 +44,9 @@ if (isset($_POST["tambah-program"])) {
     <?php include_once __DIR__ . "/../../components/layouts/navbar.php" ?>
 
     <div class="container" id="tambah-program">
-        <h1>
+        <div class="title">
             Tambah Program
-        </h1>
+        </div>
 
         <hr class="divider">
 

@@ -39,9 +39,9 @@ if (isset($_POST["login-submit"])) {
 <body>
 	<div class="container">
 		<div id="form-section">
-			<h1>
+			<div class="title">
 				Login
-			</h1>
+			</div>
 
 			<p>
 				Silahkan <span class="text-accent">login</span>

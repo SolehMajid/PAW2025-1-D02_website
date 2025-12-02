@@ -43,9 +43,9 @@ if (isset($_POST["submit"])) {
 <body>
 	<div class="container">
 		<div id="form-section">
-			<h1>
+			<div class="title">
 				Register
-			</h1>
+			</div>
 
 			<p>
 				Silahkan melakukan <span class="text-accent">registrasi</span>

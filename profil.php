@@ -66,9 +66,9 @@ $user = getUserByID($_SESSION["id_user"], $_SESSION["role"]);
 
     <div class="container">
         <div id="profile-section">
-            <h1>
+            <div class="title">
                 Profil Pengguna
-            </h1>
+            </div>
 
             <div class="buttons-container">
                 <!-- Form yang berisi tombol untuk mengubah mode edit/lihat -->

@@ -25,9 +25,9 @@ $daftarRiwayatFormPendaftaran = daftarRiwayatPendaftaranService($_SESSION["id_us
 	<?php include_once __DIR__ . "/../components/layouts/navbar.php" ?>
 
 	<div class="container" id="calon-siswa-riwayat-pendaftaran">
-		<h1>
+		<div class="title">
 			Riwayat Pendaftaran Anda
-		</h1>
+		</div>
 
 		<hr class="divider">
 

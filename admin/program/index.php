@@ -35,9 +35,9 @@ if (isset($_GET["nama-program"])) {
     <?php include_once __DIR__ . "/../../components/layouts/navbar.php" ?>
 
     <div class="container" id="daftar-program">
-        <h1>
+        <div class="title">
             Daftar Program
-        </h1>
+        </div>
 
         <hr class="divider">
 

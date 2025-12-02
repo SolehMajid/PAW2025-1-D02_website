@@ -32,9 +32,9 @@ $jumlahFormPendaftaran = jumlahPendaftarService();
     <?php include __DIR__ . "/../components/layouts/navbar.php" ?>
 
     <div class="container" id="dashboard">
-        <h1>
+        <div class="title">
             Dashboard
-        </h1>
+        </div>
 
         <hr class="divider">
 
@@ -42,9 +42,9 @@ $jumlahFormPendaftaran = jumlahPendaftarService();
         <div class="stats-container">
             <!-- Menampilkan jumlah pengguna -->
             <div class="stat" id="total-user">
-                <h1>
+                <div class="title">
                     Jumlah Pengguna
-                </h1>
+                </div>
 
                 <hr class="divider">
 
@@ -55,9 +55,9 @@ $jumlahFormPendaftaran = jumlahPendaftarService();
 
             <!-- Menampilkan jumlah pengguna dengan role admin -->
             <div class="stat" id="total-admin">
-                <h1>
+                <div class="title">
                     Jumlah Admin
-                </h1>
+                </div>
 
                 <hr class="divider">
 
@@ -68,9 +68,9 @@ $jumlahFormPendaftaran = jumlahPendaftarService();
 
             <!-- Menampilkan jumlah pengguna dengan role calon siswa -->
             <div class="stat" id="total-calon-siswa">
-                <h1>
+                <div class="title">
                     Jumlah Calon Siswa
-                </h1>
+                </div>
 
                 <hr class="divider">
 
@@ -81,9 +81,9 @@ $jumlahFormPendaftaran = jumlahPendaftarService();
 
             <!-- Menampilkan jumlah form pendaftaran -->
             <div class="stat" id="total-form-pendaftaran">
-                <h1>
+                <div class="title">
                     Jumlah Form Pendaftaran
-                </h1>
+                </div>
 
                 <hr class="divider">
 
@@ -94,9 +94,9 @@ $jumlahFormPendaftaran = jumlahPendaftarService();
 
             <!-- Menampilkan jumlah jurusan -->
             <div class="stat" id="total-jurusan">
-                <h1>
+                <div class="title">
                     Jumlah Jurusan
-                </h1>
+                </div>
 
                 <hr class="divider">
 

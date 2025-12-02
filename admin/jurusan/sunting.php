@@ -71,9 +71,9 @@ if (isset($_POST["sunting-jurusan"])) {
     <?php include_once __DIR__ . "/../../components/layouts/navbar.php" ?>
 
     <div class="container" id="sunting-jurusan">
-        <h1>
+        <div class="title">
             Sunting Jurusan
-        </h1>
+        </div>
 
         <hr class="divider">
 

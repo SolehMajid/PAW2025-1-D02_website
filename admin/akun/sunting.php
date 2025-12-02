@@ -16,7 +16,7 @@ if (!isset($_GET["id"]) || !isset($_GET["role"])) {
 /**
  * Pengaman jika yang disunting adalah admin (selain dirinya sendiri)
  */
-if ($role == "admin" && $id != $_SESSION["id_user"]) {
+if ($_SESSION["role"] == "admin" && $id != $_SESSION["id_user"]) {
     header("Location: " . BASE_URL . "admin/akun");
     exit();
 }
@@ -86,7 +86,8 @@ if (isset($_POST["user-edit"])) {
     <?php include_once __DIR__ . "/../../components/layouts/navbar.php" ?>
 
     <div class="container" id="sunting-akun">
-        <h1>Sunting Akun</h1>
+        <div class="title">Sunting Akun
+        </div>
 
         <hr class="divider">
 

@@ -36,9 +36,9 @@ if (isset($_POST["nama-jurusan"])) {
     <?php include __DIR__ . "/../../components/layouts/navbar.php" ?>
 
     <div class="container" id="daftar-jurusan">
-        <h1>
+        <div class="title">
             Daftar Jurusan
-        </h1>
+        </div>
 
         <hr class="divider">
 

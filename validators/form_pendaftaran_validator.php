@@ -160,14 +160,16 @@ function validateTanggalLahir(string $field, array &$errors)
  */
 function validateAsalSekolah(string $field, array &$errors)
 {
+    $regex = "/^[A-Za-z0-9 ]+$/";
+
     // Jika kosong
     if (cekFieldKosong($field)) {
         $errors["asal_sekolah"][] = "Asal sekolah tidak boleh kosong";
     }
 
     // Jika bukan alphabet
-    if (!cekAlpha($field)) {
-        $errors["asal-sekolah"][] = "Asal sekolah harus berisi karakter alphabet (A-Z/a-z)";
+    if (!preg_match($regex, $field)) {
+        $errors["asal-sekolah"][] = "Asal sekolah harus berisi karakter alfanumerik (A-Z/a-z) (0-9) spasi(' ')";
     }
 
     // Jika panjang dibawah 3 karakter

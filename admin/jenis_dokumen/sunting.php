@@ -67,9 +67,9 @@ if (isset($_POST["sunting-jenis-dokumen"])) {
     <?php include_once __DIR__ . "/../../components/layouts/navbar.php" ?>
 
     <div class="container">
-        <h1>
+        <div class="title">
             Sunting Jenis Dokumen
-        </h1>
+        </div>
 
         <hr class="divider">
 

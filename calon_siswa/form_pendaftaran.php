@@ -120,9 +120,9 @@ if (isset($_POST['submit-form-pendaftaran'])) {
     <?php include_once __DIR__ . "/../components/layouts/navbar.php" ?>
 
     <div class="container" id="calon-siswa-form-pendaftaran">
-        <h1>
+        <div class="title">
             Form Pendaftaran
-        </h1>
+        </div>
 
         <hr class="divider">
 

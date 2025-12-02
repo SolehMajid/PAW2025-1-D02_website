@@ -72,9 +72,9 @@ if (isset($_POST["tolak-form-pendaftaran"])) {
     <?php include_once __DIR__ . "/../../components/layouts/navbar.php" ?>
 
     <div class="container" id="admin-verifikasi-form-pendaftaran">
-        <h1>
+        <div class="title">
             Verifikasi Form Pendaftaran
-        </h1>
+        </div>
 
         <hr class="divider">
 

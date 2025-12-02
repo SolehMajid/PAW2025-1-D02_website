@@ -27,9 +27,9 @@ require_once __DIR__ . "/../../config.php";
 
     <!-- Menampilkan nama sekolah -->
     <div class="branding">
-        <h1>
+        <div class="title">
             <?= SCHOOL_NAME ?>
-        </h1>
+        </div>
     </div>
 
     <!--

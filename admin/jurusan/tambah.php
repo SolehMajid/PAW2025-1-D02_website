@@ -43,9 +43,9 @@ if (isset($_POST["add-major"])) {
     <?php include_once __DIR__ . "/../../components/layouts/navbar.php" ?>
 
     <div class="container" id="tambah-jurusan">
-        <h1>
+        <div class="title">
             Tambah Jurusan
-        </h1>
+        </div>
 
         <hr class="divider">
 

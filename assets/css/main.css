@@ -69,14 +69,15 @@ body {
 /*  */
 
 /* styling tipografi */
-h1,
+.title,
 p,
 a {
     color: var(--color-base-text);
 }
 
-h1 {
+.title {
     font-size: xx-large;
+    font-weight: bold;
 }
 
 p {
@@ -174,7 +175,7 @@ nav ul {
     gap: 1rem;
 }
 
-nav .branding h1 {
+nav .branding .title {
     justify-self: center;
     font-size: x-large;
     font-weight: bolder;
