@@ -204,7 +204,7 @@ if (isset($_POST['submit-form-pendaftaran'])) {
 
             <div class="input-container tanggal-lahir">
                 <label for="tanggal-lahir">Tanggal Lahir</label>
-                <input type="date" name="tanggal-lahir" id="tanggal-lahir" value="<?= $tanggalLahir ?? "" ?>">
+                <input type="text" name="tanggal-lahir" id="tanggal-lahir" value="<?= $tanggalLahir ?? "" ?>">
 
                 <!-- Menampilkan error -->
                 <?php if (isset($errors["tanggal-lahir"])): ?>
