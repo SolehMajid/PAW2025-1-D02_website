@@ -28,7 +28,7 @@ if (isset($_POST["tambah-program"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan konfigurasi head -->

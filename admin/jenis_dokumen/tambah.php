@@ -25,7 +25,7 @@ if (isset($_POST["tambah-jenis-dokumen"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan konfigurasi head -->

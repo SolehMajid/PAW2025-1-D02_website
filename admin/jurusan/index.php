@@ -20,7 +20,7 @@ if (isset($_POST["nama-jurusan"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan konfigurasi head -->

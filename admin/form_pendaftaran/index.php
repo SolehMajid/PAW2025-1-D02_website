@@ -9,7 +9,7 @@ $daftarFormPendaftaran = daftarFormPendaftaranService();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan beberapa konfigurasi head -->

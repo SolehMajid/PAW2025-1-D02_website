@@ -15,7 +15,7 @@ if (isset($_GET["jenis-dokumen-filter"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan konfigurasi head -->

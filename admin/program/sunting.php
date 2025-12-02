@@ -57,7 +57,7 @@ if (isset($_POST["sunting-program"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan konfigurasi head -->

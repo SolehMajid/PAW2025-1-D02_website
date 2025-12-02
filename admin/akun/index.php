@@ -14,7 +14,7 @@ $users = getUsersService($role, $username);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan beberapa konfigurasi default dari head -->

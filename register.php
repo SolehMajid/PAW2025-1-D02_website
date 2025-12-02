@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
 	<!-- Memasukkan konfigurasi head -->

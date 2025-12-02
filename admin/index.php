@@ -16,7 +16,7 @@ $jumlahFormPendaftaran = jumlahPendaftarService();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Menampilkan konfigurasi head -->

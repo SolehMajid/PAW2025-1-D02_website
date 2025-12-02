@@ -44,7 +44,7 @@ if (isset($_POST["konfirmasi-hapus"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <?php include_once __DIR__ . "/../../components/layouts/meta_title.php" ?>

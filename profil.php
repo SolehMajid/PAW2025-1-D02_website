@@ -49,7 +49,7 @@ $user = getUserByID($_SESSION["id_user"], $_SESSION["role"]);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan konfigurasi head -->

@@ -70,7 +70,7 @@ if (isset($_POST["user-edit"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan beberapa konfigurasi default dari head -->

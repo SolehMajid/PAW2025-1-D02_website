@@ -55,7 +55,7 @@ if (isset($_POST["sunting-jurusan"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan konfigurasi head -->

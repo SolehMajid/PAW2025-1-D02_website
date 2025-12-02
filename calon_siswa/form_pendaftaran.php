@@ -104,7 +104,7 @@ if (isset($_POST['submit-form-pendaftaran'])) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <!-- Memasukkan konfigurasi head -->
